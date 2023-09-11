@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="basic operations">
+    <title>CNIT-133 TUAN VU</title>
+    <link rel="stylesheet" href="style.css">   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="hw2-p3.js"></script>
+    <style>
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 20px;
+            display: none;
+        }
+
+        table,
+        td,
+        th {
+            border: 1px solid;
+
+
+        }
+
+        input:hover {
+            background: rgb(177, 244, 106);
+        }
+    </style>
+
+
+</head>
+
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-2.html">HW2</a>
+            <a href="hw2-p1.html">Part1</a>
+            <a href="hw2-p2.html">Part2</a>
+            <a href="hw2-p3.html">Part3</a>
+
+
+        </nav>
+
+    </header>
+
+    <section>
+
+        <div class="row">
+            <h1 class="text-center" style="margin-top: 90px;">
+                Part 3
+            </h1>
+        </div>
+
+
+
+        <div class="row">
+            <div class="alignCenter" style="margin-top: 90px;">
+                <!--This panel is from W3Schools-->
+                <button id="flip" class="but-2">Click to slide the panel down or up</button>
+
+                <div id="panel" style="width: 400px; margin: auto; border-radius: 15px;">
+
+                    <h4>The exchange rates for 1 U.S. dollar in June 2021:</h4><br>
+
+                    <h4 style="line-height: 150%;">Enter a dollar amount in the blank box below<br> to see the foreign
+                        exchange values</h4>
+
+                </div>
+
+
+
+                <div style="margin-top: 30px;">
+                    <table class="center">
+
+                        <tr>
+                            <th colspan="3">Monetary Exchange Rates</th>
+                        </tr>
+
+                        <tr>
+                            <th>Currency</th>
+                            <th>Rate</th>
+                            <th>Value</th>
+                        </tr>
+
+                        <tr>
+                            <td>Euro</td>
+                            <td>0.84</td>
+                            <td id="euro"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Canadian Dollar</td>
+                            <td>1.23</td>
+                            <td id="canada"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Hong Kong Dollar</td>
+                            <td>7.76</td>
+                            <td id="hongkong"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Japanese Yen</td>
+                            <td>110.80</td>
+                            <td id="japan"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Mexican Peso</td>
+                            <td>19.82</td>
+                            <td id="mexico"></td>
+                        </tr>
+
+                        <tr>
+                            <th colspan="2">Enter Amount of U.S. Dollars</th>
+                            <td><input type="number" id="amountIn"></td>
+                        </tr>
+
+                    </table>
+                </div>
+                <br>
+                <input type="button" onclick="calculate()" value="Calculate exchange" class="but-2">
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+    <footer>
+    </footer>
+
+</body>
+
+</html>
