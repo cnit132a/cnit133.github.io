@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="basic operations">
+    <title>CNIT133-Hw2 TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="hw3-p1.js"></script>
+
+    <style>
+        .body {
+            width: 300px;
+            margin: 0px auto;
+            background-color: #f6f9e4;
+            padding: 15px;
+        }
+
+        hr {
+            border-top: 1px dotted rgb(147, 146, 146);
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-3.html">HW3</a>
+            <a href="hw3-p1.html">Part1</a>
+            <a href="hw3-p2.html">Part2</a>
+            <a href="hw3-p3.html">Part3</a>
+
+        </nav>
+
+    </header>
+
+    <section>
+        <div style="margin-top: 20%;">
+            <div class="row">
+                <h1 class="text-center">
+                    Part 1
+                </h1>
+            </div>
+        </div>
+
+        <div class="body">
+
+            <h3 style="text-align: center;">Student Grade</h3><br>
+
+            <form name="myform">
+
+                <table>
+                    <tr>
+                        <td>Homework Average: </td>
+                        <td><input type="number" id="hwavg" size="2"></td>
+                    </tr>
+                    <tr>
+                        <td>Mid-Term Exam Score: </td>
+                        <td><input type="number" id="midter" size="3"></td>
+                    </tr>
+                    <tr>
+                        <td>Final Exam Score: </td>
+                        <td><input type="number" id="fexam" size="3"></td>
+                    </tr>
+                    <tr>
+                        <td>Participation: </td>
+                        <td><input type="number" id="parti" size="3"></td>
+                    </tr>
+
+                </table>
+                <br>
+
+                <div id="errOut"></div>
+                <br>
+                <span style="color: rgb(11, 11, 11); font-size: 20px;">Summary of Final Grade:</span><br><br>
+                <div id="results"></div>
+                <br>
+
+                </table>
+
+
+                <input type="button" onclick="process()" value="SUBMIT">
+                <input type="reset" value="CLEAR" onclick="res()"><br><br>
+
+            </form>
+        </div>
+
+
+
+    </section>
+
+    <footer>
+    </footer>
+
+</body>
+
+</html>
