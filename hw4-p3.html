@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="looping statements">
+    <title>CNIT-133 TUAN VU Hw4</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #result {
+            text-align: center;
+            font-size: 16px;
+            
+        }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-4.html">HW4</a>
+            <a href="hw4-p1.html">Part1</a>
+            <a href="hw4-p2.html">Part2</a>
+            <a href="hw4-p3.html">Part3</a>
+
+        </nav>
+
+    </header>
+
+    <section>
+        <div class="row">
+            <h2 class="text-center" style="padding-top: 90px;">
+                Hw4 - Part 3
+            </h2><br><br>
+        </div>
+        <article>
+            <div class="text-center">
+                <h2>Hollow Square Generator</h2><br><br>
+
+                <form id="square-form">
+                    <label for="number">Enter a number (2-10):</label>
+                    <input type="number" id="number" name="number" required>
+                    <button type="button" id="generate">Generate Square</button>
+                    <button type="button" id="clear">Clear</button>
+                </form>
+                <br><br>
+            </div>
+            <div id="result"></div>
+            <div>
+            <script>
+                document.getElementById("generate").addEventListener("click", function () {
+                    const inputNumber = parseInt(document.getElementById("number").value);
+
+                    if (isNaN(inputNumber) || inputNumber < 2 || inputNumber > 10) {
+                        document.getElementById("result").textContent = "Invalid input. Please enter a number between 2 and 10.";
+                    } else {
+                        const squareSize = inputNumber;
+                        let square = "";
+
+                        for (let i = 1; i <= squareSize; i++) {
+                            for (let j = 1; j <= squareSize; j++) {
+                                if (i === 1 || i === squareSize || j === 1 || j === squareSize) {
+                                    square += "* &nbsp;&nbsp";
+                                } else {
+                                    square += " &nbsp;&nbsp;&nbsp; ";
+                                }
+                            }
+                            square += "<br>";
+                        }
+
+                        document.getElementById("result").innerHTML = square;
+                    }
+                });
+
+                document.getElementById("clear").addEventListener("click", function () {
+                    document.getElementById("number").value = "";
+                    document.getElementById("result").innerHTML = "";
+                });
+            </script>
+            </div>
+        </article>
+
+    </section>
+
+</body>
+
+</html>

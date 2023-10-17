@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="basic operations">
+    <title>CNIT-133 TUAN VU Hw4</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        #draggable {
+            width: 500px;
+            height: 280px;
+            padding: 10px;
+            text-align: center;
+            background-color: lightgreen;
+            cursor: pointer;
+            overflow: auto;
+            border-radius: 20px;
+            font-weight: bolder;
+            font-size: 18px;
+            line-height: 200%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-4.html">HW4</a>
+            <a href="hw4-p1.html">Part1</a>
+            <a href="hw4-p2.html">Part2</a>
+            <a href="hw4-p3.html">Part3</a>
+        
+        </nav>
+
+    </header>
+
+    <section style="text-align: center;">
+        <div>
+            <div class="row">
+                <h2 class="text-center" style="padding-top: 90px;">
+                    Hw4 - Part 1
+                </h2><br><br>
+            </div>
+        </div>
+        
+        <h3>Click and hold the mouse button down while moving the box below</h3><br><br>
+
+        <div style="margin: auto;" id="draggable">
+            
+            <h3>You can put me anywhere you like</h3><br>
+            <div id="result"></div>
+            <div id="result2"></div>
+        </div>
+
+        <script>
+            function cal_ForLoop() {
+                var product = 1;
+                var sum = 0;
+                for (var i = 5; i <= 25; i += 4) {
+                    product *= i;
+                    sum += i;
+                }
+                document.getElementById('result').innerHTML = `
+                <p>The result of 5 * 9 * 13 * 17 * 21 * 25 is ${product.toLocaleString()}</p>
+                <p>The result of 5 + 9 + 13 + 17 + 21 + 25 is ${sum.toLocaleString()}</p>
+            `;
+            }
+            cal_ForLoop();
+
+            function cal_WhileLoop() {
+                var product = 1;
+                var sum = 0;
+                var i = 3;
+                while (i <= 18) {
+                    product *= i;
+                    sum += i;
+                    i += 3;
+                }
+                document.getElementById('result2').innerHTML = `
+                <p>The result of 3 * 6 * 9 * 12 * 15 * 18 is ${product.toLocaleString()}</p>
+                <p>The result of 3 + 6 + 9 + 12 + 15 + 18 is ${sum.toLocaleString()}</p>
+            `;
+            }
+            cal_WhileLoop();
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(function () {
+                $("#draggable").draggable();
+            });
+        </script>
+    </section>
+</body>
+
+</html>
