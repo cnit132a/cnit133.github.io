@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="basic operations">
+    <title>CNIT133-Hw5 Arrays TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="hw5_p1.js" defer></script>
+
+    <style>
+        .body {
+            width: 400px;
+            margin: 0px auto;
+            padding: 20px;
+            background-color: #f5f5dc;
+            font-size: 16px;
+
+        }
+
+        button {
+            background-color: #a1eea4;
+            border: none;
+            color: rgb(20, 19, 19);
+            padding: 4px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 3px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-5.html">HW5</a>
+            <a href="hw5_p1.html">Part1</a>
+            <a href="hw5_p2.html">Part2</a>
+            <a href="hw5_p3.html">Part3</a>
+
+
+        </nav>
+
+    </header>
+
+    <section>
+        <div style="margin-top: 20%;">
+            <div class="row">
+                <h2 class="text-center">
+                    Part 2
+                </h2>
+            </div>
+        </div>
+
+        <article class="body">
+            <h3>Select a Website</h3><br>
+
+            <label for="menu1">Choose a website:</label> <br><br>
+            <select id="menu1" onchange="webChange(this)">
+                <option value="">Select a website</option>
+                <option value="https://www.Walmart.com">Walmart</option>
+                <option value="https://www.Amazon.com">Amazon</option>
+                <option value="https://www.Target.com">Target</option>
+                <option value="https://www.Costco.com">Costco</option>
+            </select>
+
+            <br><br><br>
+
+            <label for="menu2">Choose a website with button:</label><br>
+            <br>
+            <select id="menu2">
+                <option value="">Select a website</option>
+                <option value="https://www.Walmart.com">Walmart</option>
+                <option value="https://www.Amazon.com">Amazon</option>
+                <option value="https://www.Target.com">Target</option>
+                <option value="https://www.Costco.com">Costco</option>
+            </select>
+            <button onclick="selectedWeb()">Go</button>
+
+            <button onclick="clearSelections()">Clear Selections</button>
+
+            <script>
+                function webChange(selectObject) {
+                    var value = selectObject.value;
+                    if (value !== "") {
+                        window.open(value, "_blank");
+                    }
+                }
+
+                function selectedWeb() {
+                    var selectElement = document.getElementById("menu2");
+                    var selectedValue = selectElement.value;
+                    if (selectedValue !== "") {
+                        window.open(selectedValue, "_blank");
+                    }
+                }
+
+                function clearSelections() {
+                    document.getElementById("menu1").selectedIndex = 0;
+                    document.getElementById("menu2").selectedIndex = 0;
+                }
+            </script>
+
+
+
+        </article>
+    </section>
+</body>
+
+</html>

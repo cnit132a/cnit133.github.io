@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="basic operations">
+    <title>CNIT133-Hw5 Arrays TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+        .body {
+            width: 400px;
+            margin: 0px auto;
+            padding: 20px;
+            background-color: #f5f5dc;
+            font-size: 16px;
+            border-radius: 10px;
+
+        }
+
+        button {
+            background-color: #a1eea4;
+            border: none;
+            color: rgb(20, 19, 19);
+            padding: 4px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 3px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        #output {
+            /*--border: 1px solid #ccc;*/
+            padding: 10px;
+            width: 320px;
+            white-space: pre-line;
+            background-color: blanchedalmond;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-5.html">HW5</a>
+            <a href="hw5_p1.html">Part1</a>
+            <a href="hw5_p2.html">Part2</a>
+            <a href="hw5_p3.html">Part3</a>
+
+
+        </nav>
+
+    </header>
+
+    <section>
+        <div style="margin-top: 20%;">
+            <div class="row">
+                <h2 class="text-center">
+                    Part 3
+                </h2>
+            </div>
+        </div>
+
+        <article class="body">
+
+            <h3>State Information Lookup</h3><br>
+
+            <form id="stateForm">
+                <label for="enterName">Enter State Name or Abbreviation:</label><br><br>
+                <input type="text" id="enterName" name="enterName" autofocus>
+                <button type="submit" id="submitBtn">Get State Info</button>
+                <button type="button" id="clearBtn">Clear Selection </button>
+            </form>
+
+            <div id="output"></div>
+
+            <script src="hw5_p3.js"></script>
+
+
+        </article>
+    </section>
+</body>
+
+</html>
