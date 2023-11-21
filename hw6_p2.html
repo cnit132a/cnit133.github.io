@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Objects exercise - math round">
+    <title>CNIT133-Hw6 Objects TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .box {
+            width: 410px;
+            margin: 0px auto;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            background-color: #f5f5dc;
+            font-size: 18px;
+        }
+
+        input {
+            text-align: center;
+                  
+        }
+
+        button {
+            background-color: #a1eea4;
+            border: none;
+            color: rgb(20, 19, 19);
+            padding: 4px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 3px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+    </style>
+
+
+    <script>
+        function searchCh() {
+
+            var content = document.getElementById('longContent').value;
+
+            var searchChar = document.getElementById('searchChar').value.toLowerCase();
+
+
+            var count = 0;
+            for (var i = 0; i < content.length; i++) {
+                if (content.charAt(i).toLowerCase() === searchChar) {
+                    count++;
+                }
+            }
+
+            if (count > 0) {
+                document.getElementById('result').innerText = "Character '" + searchChar + "' found " + count + " times in the content.";
+            } else {
+                var newWindow = window.open("", "_blank", "width=300,height=100,top=200,left=550");
+                newWindow.document.write("<p>Search character '" + searchChar + "' not found in the content</p>");
+
+                newWindow.document.write("<button onclick='window.close()'>Close</button>");
+
+                document.getElementById('result').innerText = "";
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-6.html">HW6</a>
+            <a href="hw6_p1.html">Part1</a>
+            <a href="hw6_p2.html">Part2</a>
+            <a href="hw6_p3.html">Part3</a>
+
+
+        </nav>
+
+    </header>
+    <section>
+        <div style="margin-top: 15%;">
+            <div class="row">
+                <h2 class="text-center">
+                    Part 2 - charAt
+                </h2><br><br>
+            </div>
+        </div>
+
+        <container>
+            <article class="box">
+                <h3>Character Search</h3><br>
+
+                <form onsubmit="event.preventDefault(); searchCh();">
+                    <label for="longContent">Type or paste a long text here</label><br><br>
+                    <textarea id="longContent" rows="4" cols="50"></textarea><br>
+
+                    <button type="button" value="Reset" onclick="this.form.reset();">Reset</button>
+                    <br>
+
+                    <label for="searchChar">Search Character:</label>
+                    <input type="text" id="searchChar" maxlength="1" size="8">
+                    <button type="submit" value="Search">Search</button>
+                </form>
+
+                <div id="result"></div>
+            </article>
+
+
+        </container>
+
+
+    </section>
+
+
+
+
+
+
+
+</body>
+
+</html>

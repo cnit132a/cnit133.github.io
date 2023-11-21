@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Objects exercise">
+    <title>CNIT133-Hw6 Objects TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+            color: #333;
+        }
+
+        .box {
+            width: 410px;
+            margin: 0px auto;
+            padding-left: 70px;
+            padding-top: 20px;      
+            padding-bottom: 20px;
+            background-color: #f5f5dc;
+            
+        }
+
+        button {
+            background-color: #a1eea4;
+            border: none;
+            color: rgb(20, 19, 19);
+            padding: 4px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 12px;
+            margin: 3px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            max-width: 70%;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-6.html">HW6</a>
+            <a href="hw6_p1.html">Part1</a>
+            <a href="hw6_p2.html">Part2</a>
+            <a href="hw6_p3.html">Part3</a>
+
+
+        </nav>
+
+    </header>
+
+    <section>
+        <div style="margin-top: 15%;">
+            <div class="row">
+                <h2 class="text-center">
+                    Part 3 - Pattern, Match, Mask
+                </h2><br><br>
+            </div>
+        </div>
+        <container>
+            <article>
+
+            </article>
+
+        </container>
+
+    </section>
+
+    <article class="box">
+
+        <h3 style="line-height: 200%; font-size: 18px;">Phone Number Formatter</h3>
+
+        <input type="text" id="phoneNumberInput" size="30" placeholder="(999) 999-9999" />
+
+        <br>
+
+        <input type="text" id="areaCodeOutput" size="6" readonly />
+        <input type="text" id="firstThreeDigitsOutput" size="6" readonly />
+        <input type="text" id="lastFourDigitsOutput" size="10" readonly />
+
+        <br>
+
+        <button onclick="processPhoneNumber()">Submit</button>
+        <button onclick="clearForm()">Reset</button>
+
+        <div id="errorMessage" class="error-message"></div>
+
+
+    </article>
+
+    <script>
+        // Apply mask to phone number input
+        $(document).ready(function () {
+            $('#phoneNumberInput').mask('(999) 999-9999');
+        });
+
+        function processPhoneNumber() {
+            $('#areaCodeOutput').val('');
+            $('#firstThreeDigitsOutput').val('');
+            $('#lastFourDigitsOutput').val('');
+            $('#errorMessage').text('');
+
+            var phoneNumber = $('#phoneNumberInput').val();
+            var pattern = /^\(\d{3}\) \d{3}-\d{4}$/;
+
+            if (pattern.test(phoneNumber)) {
+                var parts = phoneNumber.match(/\d+/g);
+                $('#areaCodeOutput').val(parts[0]);
+                $('#firstThreeDigitsOutput').val(parts[1]);
+                $('#lastFourDigitsOutput').val(parts[2]);
+            } else {
+                $('#errorMessage').text('Please enter the phone number in the format (999) 999-9999.');
+            }
+        }
+
+        function clearForm() {
+            $('#phoneNumberInput').val('');
+            $('#areaCodeOutput').val('');
+            $('#firstThreeDigitsOutput').val('');
+            $('#lastFourDigitsOutput').val('');
+            $('#errorMessage').text('');
+        }
+    </script>
+
+</body>
+
+</html>
