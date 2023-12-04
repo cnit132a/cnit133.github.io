@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="basic operations">
+    <title>CNIT133-Hw3 TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
+
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #question,
+        #feedback,
+        #play-again {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #answer {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .box {
+            width: 500px;
+            margin: 0px auto;
+            background-color: #f6f9e4;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgb(208, 207, 207);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">HOME</a>
+
+        <nav class="navbar">
+            <a href="homework-3.html">HW3</a>
+            <a href="hw3-p1.html">Part1</a>
+            <a href="hw3-p2.html">Part2</a>
+            <a href="hw3-p3.html">Part3</a>
+
+
+        </nav>
+
+    </header>
+
+    <section>
+        <div style="margin-top: 15%; margin-bottom: 3%;">
+            <div class="row">
+                <h1 class="text-center">
+                    Part 1
+                </h1>
+            </div>
+        </div>
+        <div class="box">
+
+            <h3>Multiplication Game</h3><br><br><br>
+
+            <div id="question"></div>
+            <input type="text" id="answer" placeholder="Your Answer">
+            <button onclick="checkAnswer()">Submit Answer</button>
+            <br><br><br>
+            <div id="feedback"></div>
+
+            <div id="play-again" style="display: none;">
+                Do you want to play again?
+                <button onclick="generateQuestion()">Yes</button>
+                <button onclick="endGame()">No</button>
+            </div>
+
+            <script>
+                function generateRandomNumber() {
+                    return Math.floor(Math.random() * 10);
+                }
+
+                function generateQuestion() {
+                    var num1 = generateRandomNumber();
+                    var num2 = generateRandomNumber();
+
+                    currentAnswer = num1 * num2;
+
+                    document.getElementById('question').innerHTML = 'How much is ' + num1 + ' times ' + num2 + ' ?';
+                    document.getElementById('answer').value = '';
+                    document.getElementById('feedback').innerHTML = '';
+                    document.getElementById('play-again').style.display = 'none';
+                }
+
+                function checkAnswer() {
+                    var userAnswer = parseInt(document.getElementById('answer').value);
+
+                    if (userAnswer === currentAnswer) {
+                        document.getElementById('feedback').innerHTML = 'Very good!';
+                        document.getElementById('play-again').style.display = 'block';
+                    } else {
+                        document.getElementById('feedback').innerHTML = 'No. Please try again.';
+                    }
+                }
+
+                function endGame() {
+                    document.getElementById('feedback').innerHTML = 'Thanks for playing, see you next time!';
+                    document.getElementById('play-again').style.display = 'none';
+                }
+
+                var currentAnswer;
+                generateQuestion();
+            </script>
+        </div>
+    </section>
+
+</body>
+
+</html>
