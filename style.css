@@ -2,8 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
+/* The asterisk (*) is known as the CSS universal selector and is used to select any and all types of elements ins HTML page */
+
 
 body {
     min-height: 100vh;
@@ -11,7 +13,7 @@ body {
     font-size: 16px;
     /* background: url(imgs/IMG_9087.JPG) no-repeat;
     background-size: cover;
-    background-position: center; */ 
+    background-position: center; */
 
 }
 
@@ -21,7 +23,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 13px 25%;
     background: seagreen;
     display: flex;
     justify-content: space-between;
@@ -38,6 +40,7 @@ body {
 
 }
 
+
 .navbar a {
     position: relative;
     font-size: 18px;
@@ -48,7 +51,7 @@ body {
 
 }
 
-
+/* Format underline when hovering on navbar */
 .navbar a::before {
     content: '';
     position: absolute;
@@ -58,11 +61,9 @@ body {
     height: 2px;
     background: #fff;
     transition: .3s;
-
-
 }
 
-
+/* Make underline when hovering on navbar */
 .navbar a:hover::before {
     width: 100%;
 }
@@ -75,8 +76,8 @@ body {
     margin-top: 0;
     padding-top: 10%;
     padding-bottom: 20%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif 
-    sans-serif;background-color: #fff;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif sans-serif;
+    background-color: #fff;
     color: black;
     font-size: 30px;
 }
@@ -84,12 +85,12 @@ body {
 .bg-frame {
     background-image: url(flowers.png);
     background-repeat: repeat;
-    
+
 }
 
 .text-center {
     text-align: center;
-    
+
 }
 
 .alignCenter {
@@ -108,12 +109,12 @@ h2 {
 
 h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 h4 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 15px;  
+    font-size: 15px;
 }
 
 .but-1 {
@@ -123,7 +124,7 @@ h4 {
     margin-left: 15px;
     margin-right: 8px;
     text-align: center;
-    
+
 }
 
 .but-2 {
@@ -131,18 +132,20 @@ h4 {
     height: 30px;
     font-size: 16px;
     margin: 15px 8px;
-    text-align: center; 
+    text-align: center;
     border-radius: 15px;
 }
 
-table, th, td {
-    
+table,
+th,
+td {
+
     border-collapse: collapse;
     padding: 5px;
 
-  }
+}
 
-  table.center {
-    margin-left: auto; 
+table.center {
+    margin-left: auto;
     margin-right: auto;
-  }
+}
