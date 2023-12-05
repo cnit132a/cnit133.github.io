@@ -16,8 +16,8 @@
 
   <style>
     nav {
-      padding-left: 10%;
-      padding-right: 10%;
+      padding-left: 20%;
+      padding-right: 20%;
       font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     }
 
@@ -26,16 +26,16 @@
     }
 
     .but-3 {
-      height: 35px;
-      width: 120px;
+      height: 22px;
+      width: 80px;
       color: #333;
       border-right: 6px solid #c3c2c2;
-      border-bottom: 6px solid #828181;
-      font-size: 18px;
+      border-bottom: 3px solid #828181;
+      font-size: 16px;
       font-family: monospace;
       font-weight: bold;
       border-radius: 10px;
-      margin-top: 30px;
+      margin-top: 0px;
     }
 
     a:link {
@@ -48,6 +48,11 @@
 
     .bgFrame {
       background-image: url(bgHw7.png);
+    }
+
+    .box {
+      max-width: 900px;
+      margin: auto;
     }
   </style>
 
@@ -106,15 +111,132 @@
         </h1>
       </div>
     </div>
-    <div class="text-center">
-      <h1><button class="but-3"><a href="hw7_p1.html">Part1</a></button></h1>
-      <h2><button class="but-3"><a href="hw7_p2.html">Part2</a></button></h2>
-      
+  </section>
 
+  <section>
+    <div class="box">
+      <h4 style="text-align: center; margin-top: 50px; margin-bottom: 35px;">Click on the lines below to see the
+        description of homework 7</h4>
+      <div class="main">
+        <h2 style="text-align: center">PART 1 REQUIREMENT</h2>
+        <div class="answer">
+
+          <p><strong>Create a webpage for part 1 with</strong>
+          <ul>
+            <li>a heading of your choice</li>
+            <li>a div, or a main tag with at least 3 paragraphs and that will be the</li>
+            area to be used to apply the styles chosen by the user
+            <li>a form with:</li>
+
+            <li>
+              <ul>
+                <li>radio buttons for the user to select the color of the
+                  background to be applied (you should have at least 2
+                  different colors for the user to choose from)</li>
+                <li>checkboxes that will allow the user to choose "underline",
+                  and/or "bold", and/or "italic" - remember that HTML
+                  checkboxes allow the user to choose one or more options</li>
+                <li>a select element to create a drop-down list where you will
+                  allow the user to select the font-size to be applied (at least 3
+                  different font-size should be listed and preferably in em, or
+                  rem, or % units)</li>
+                <li>there should be no button to clear the choices, neither a
+                  button to submit the information - when the user selects a
+                  style, that style will be applied right away</li>
+              </ul>
+            </li>
+
+            <li>a hyperlink so the user can go back to the page of Homework 7</li>
+          </ul>
+
+          <strong>You will write a script (it can be in JavaScript or jQuery) that will do the
+            following:</strong><br><br>
+          <ul>
+            <li>
+              As the user starts selecting the styles available (from the radio
+              buttons, or from the checkboxes, or from the select (drop-down list)),
+              you will apply the selected style to the area mentioned above (div or
+              using the
+              main> tag)</li>
+            IMPORTANT NOTES:<br>
+            Remember that if the user checks a certain checkbox and later the
+            user unchecks it, you will need to remove the style that was
+            unchecked from the div (or main) area.<br>
+            The styles should be added as the user keeps selecting/checking the
+            styles from the form you provided - this means that if the user checks
+            the radio button with a color for the background and checks the bold
+            of the checkbox group, both of these styles should be applied - it's not
+            only applying the last style chosen! <button class="but-3"><a href="hw7_p1.html">Part1</a></button>
+          </ul>
+          </p>
+
+        </div>
+        <h2 style="text-align: center">PART 2 REQUIREMENT</h2>
+        <div class="answer">
+          <p><strong> will create a web page for this part with the following:</strong><br>
+            o a heading of your choice<br>
+            o a hyperlink so the user can go back to the page of Homework 7<br>
+            o a navigation with a link to Homework 2, Homework 3, and Homework
+            4<br>
+            TIP: It will be better to choose a horizontal menu<br>
+            • You will code a script that when the user mouseover on any of those 3 items of
+            your navigation, you will display a drop-down menu that contains the links of
+            the parts of each Homework (part 1, part 2, etc.). If applicable, you should
+            also include links to any extra credit pages that you have done.<br>
+            TIP: Make sure that all links are working.<br>
+            IMPORTANT NOTES AND TIPS:<br>
+            • You can use strictly JavaScript or else jQuery - using CSS only will not be
+            acceptable.<br>
+            • You can check this example from the instructorLinks to an external site. (the
+            links are not working, not pointing to anything but it demonstrates that when I
+            hover on an item of the main menu, it will show the submenu ONLY for that
+            item). Another great example can be seen in this article from Smashing
+            HubLinks to an external site..Links to an external site. You can see a simpler
+            exampleLinks to an external site. too <button class="but-3"><a href="hw7_p2.html">Part2</a></button></p>
+        </div>
+      </div>
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.answer').hide();
+
+        // Attach a click handler to the h2 elements.
+        $(".main h2").click(function () {
+          // Save the h2 element that was clicked
+          // as well as the following answer element.
+          var h2 = $(this);
+          var answer = h2.next(".answer");
+
+          if (answer.css("display") == "none") {
+            // If the answer is currently not displayed,
+            // display it with a sliding down motion,
+            // and when done, add the "close" class to the h2 element.
+            answer.slideDown(function () {
+              h2.addClass("close");
+            });
+          } else {
+            // Otherwise, fade the answer out, and when done,
+            // remove the "close" class from the h2 element.
+            answer.fadeOut(function () {
+              h2.removeClass("close");
+            });
+          }
+        });
+      }); // end ready
+    </script>
+
   </section>
+
+
+
+
+
+
+
 
 
 
