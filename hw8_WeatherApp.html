@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <style>
+        body {
+            background-image: url(bgHw8_API.png);
+        }
+
+        .box {
+            max-width: 440px;
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 40px 70px;
+            background-color: aliceblue;
+            border-radius: 10px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h1>Weather App</h1>
+
+        <!-- Search Box -->
+        <label for="cityInput">Enter City:</label>
+        <input type="text" id="cityInput" placeholder="Enter city name">
+        <button onclick="getWeather()">Search</button>
+
+        <!-- Current Weather Section -->
+        <h2>Current Weather</h2>
+        <div id="currentWeather"></div>
+
+        <!-- Weather Forecast Section -->
+        <h2>Weather Forecast for the Week</h2>
+        <table id="weatherForecast">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Temperature (°C)</th>
+                    <th>Weather</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <p><a href="homework-8.html">Back to Main Page</a></p>
+    </div>
+    <div class="row">
+        <div style="text-align: center; margin-top: 10px;">
+            <img src="bgHw8a_Chistmas.png" alt="Merry Chistmas"
+                width="590" height="370"></div>
+    </div>
+
+
+    <script>
+        function getWeather() {
+            const apiKey = '1c06a75b99cca82244734e13efc739f5'; // My API key
+            const cityInput = document.getElementById('cityInput').value;
+            const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityInput}&appid=${apiKey}`;
+
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    const response = JSON.parse(xhr.responseText);
+                    displayCurrentWeather(response);
+                    displayWeatherForecast(response);
+                }
+            };
+            xhr.open('GET', apiUrl, true);
+            xhr.send();
+        }
+
+        function displayCurrentWeather(data) {
+            const currentWeatherDiv = document.getElementById('currentWeather');
+            const weatherInfo = data.list[0].weather[0];
+            const temperature = (data.list[0].main.temp - 273.15).toFixed(2); // Convert to Celsius
+
+            currentWeatherDiv.innerHTML = `
+            <p><strong>City:</strong> ${data.city.name}</p>
+            <p><strong>Temperature:</strong> ${temperature} °C</p>
+            <p><strong>Weather:</strong> ${weatherInfo.description}</p>
+         `;
+        }
+
+        function displayWeatherForecast(data) {
+            const forecastTable = document.getElementById('weatherForecast').getElementsByTagName('tbody')[0];
+            forecastTable.innerHTML = ''; // Clear previous entries
+
+            for (let i = 0; i < data.list.length; i += 8) {
+                const forecast = data.list[i];
+                const date = new Date(forecast.dt_txt);
+                const temperature = (forecast.main.temp - 273.15).toFixed(2); // Convert to Celsius
+                const weatherInfo = forecast.weather[0];
+
+                const row = forecastTable.insertRow();
+                row.innerHTML = `
+               <td>${date.toDateString()}</td>
+               <td>${temperature} °C</td>
+               <td>${weatherInfo.description}</td>
+            `;
+            }
+        }
+    </script>
+</body>
+
+</html>

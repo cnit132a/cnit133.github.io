@@ -2,190 +2,291 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="function">
-  <title><CNIT133-Hw8></CNIT133-Hw8> TUAN VU</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="function">
+    <title><CNIT133-Hw8></CNIT133-Hw8> TUAN VU</title>
+    <link rel="stylesheet" href="style.css">
 
-  <!-- BOOTSTRAP CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  <link rel="stylesheet" href="boostrap5navBar.css">
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="boostrap5navBar.css">
 
-  <style>
-    nav {
-      padding-left: 20%;
-      padding-right: 5%;
-      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-    }
-
-
-
-    .but-4 {
-      height: 25px;
-      width: 200px;
-      color: #333;
-      border: 1px solid rgb(129, 127, 127);
-      font-size: 16px;
-      font-family: monospace;
-      font-weight: bold;
-      border-radius: 10px;
-      margin-top: 0px;
-
-    }
-
-    a:link {
-      text-decoration: none;
-    }
-
-    button:hover {
-      background: rgb(177, 244, 106);
-    }
-
-    .bgFrame {
-      background-image: url(bgHw8c.png);
-    }
-
-    .box {
-      max-width: 400px;
-      margin: auto;
-      text-align: center;
-      padding-top: 50px;
-    }
+    <style>
+        nav {
+            padding-left: 20%;
+            padding-right: 5%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
 
 
-    /*------------------*/
-    table {
-      margin: auto;
-    }
 
-    table,
-    th,
-    td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      background-color: #fff;
-    }
+        .but-4 {
+            height: 25px;
+            width: 200px;
+            color: #333;
+            border: 1px solid rgb(129, 127, 127);
+            font-size: 16px;
+            font-family: monospace;
+            font-weight: bold;
+            border-radius: 10px;
+            margin-top: 0px;
 
-    th,
-    td {
-      padding: 5px;
-    }
-  </style>
+        }
+
+        a:link {
+            text-decoration: none;
+        }
+
+        button:hover {
+            background: rgb(177, 244, 106);
+        }
+
+        .bgFrame {
+            background-image: url(bgHw8c.png);
+        }
+
+        .box {
+            max-width: 400px;
+            margin: auto;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .box2 {
+            max-width: 600px;
+            margin: auto;
+            padding-top: 50px;
+        }
+
+        /*------------------*/
+        table {
+            margin: auto;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
 
 </head>
 
 <body class="bgFrame">
 
-  <!-- NAVBAR -->
-  <div>
-    <!-- navbar wrapping -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top wordSpace">
+    <!-- NAVBAR -->
+    <div>
+        <!-- navbar wrapping -->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top wordSpace">
 
-      <!-- container for responsiveness -->
-      <div class="container-fluid">
+            <!-- container for responsiveness -->
+            <div class="container-fluid">
 
-        <!-- first item: brand name -->
-        <a class="navbar-brand" href="index.html">HOME</a>
+                <!-- first item: brand name -->
+                <a class="navbar-brand" href="index.html">HOME</a>
 
-        <!-- this is the button when it collapses due to small screen size (data-bs-target must match the ID of the div below)-->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+                <!-- this is the button when it collapses due to small screen size (data-bs-target must match the ID of the div below)-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <!-- this div holds everything who is going to collapse inside the button (be careful with the ID. It must match with the button target) -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- this div holds everything who is going to collapse inside the button (be careful with the ID. It must match with the button target) -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-          <!-- this list contains the "menu options (items)" such as download, contact, pricing, etc. -->
-          <ul id="my-ul" class="ms-auto navbar-nav">
+                    <!-- this list contains the "menu options (items)" such as download, contact, pricing, etc. -->
+                    <ul id="my-ul" class="ms-auto navbar-nav">
 
-            <li class="nav-item">
-              <a class="nav-link" href="homework-8.html">HW8 &nbsp&nbsp</a>
-            </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="homework-8.html">HW8 &nbsp&nbsp</a>
+                        </li>
 
 
-          </ul>
-          <!-- <form class="d-flex">
+                    </ul>
+                    <!-- <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
           </form> -->
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <section>
+        <div style="margin-top: 15%;">
+            <div class="row">
+                <h1 class="text-center">
+                    Homework 8 - AJAX Application
+                </h1>
+            </div>
         </div>
-      </div>
-    </nav>
-  </div>
+    </section>
 
-  <section>
-    <div style="margin-top: 15%;">
-      <div class="row">
-        <h1 class="text-center">
-          Homework 8 - AJAX Application
-        </h1>
-      </div>
-    </div>
-  </section>
+    <section>
+        <div class="box">
+            <button class="but-4" type="button" onclick="loadDoc()">Get CD collection</button>
+            <br><br>
+            <table id="demo"></table>
+        </div>
 
-  <section>
-    <div class="box">
-      <button class="but-4" type="button" onclick="loadDoc()">Get CD collection</button>
-      <br><br>
-      <table id="demo"></table>
-    </div>
-
-    <script>
-      function loadDoc() {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onload = function () {
-          myFunction(this);
-        }
-        xhttp.open("GET", "cd_catalog.xml");
-        xhttp.send();
-      }
-      function myFunction(xml) {
-        const xmlDoc = xml.responseXML;
-        const x = xmlDoc.getElementsByTagName("CD");
-        let table = "<tr><th>Artist</th><th>Title</th></tr>";
-        for (let i = 0; i < x.length; i++) {
-          table += "<tr><td>" +
-            x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
-            "</td><td>" +
-            x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
-            "</td></tr>";
-        }
-        document.getElementById("demo").innerHTML = table;
-      }
+        <script>
+            function loadDoc() {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function () {
+                    myFunction(this);
+                }
+                xhttp.open("GET", "cd_catalog.xml");
+                xhttp.send();
+            }
+            function myFunction(xml) {
+                const xmlDoc = xml.responseXML;
+                const x = xmlDoc.getElementsByTagName("CD");
+                let table = "<tr><th>Artist</th><th>Title</th></tr>";
+                for (let i = 0; i < x.length; i++) {
+                    table += "<tr><td>" +
+                        x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                        "</td><td>" +
+                        x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                        "</td></tr>";
+                }
+                document.getElementById("demo").innerHTML = table;
+            }
 
 
-    </script>
+        </script>
 
+        <div class="box2">
 
-
-
-
-
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <h2>Explanation of AJAX</h2>
+            <p>
+                AJAX (Asynchronous JavaScript and XML) is a technique used in web development to create smooth and
+                dynamic user
+                experiences. In this application, AJAX is employed to retrieve data from an XML file without reloading
+                the
+                entire
+                page.
+            </p>
+            <p>
+                The script includes several AJAX calls, each responsible for fetching data from the server. The key
+                functions
+                include:
+            <ul>
+                <li><strong>loadDoc():</strong> Load XML Document by initiating the XMLHttpRequest object and handles
+                    the
+                    request.</li>
+                <li><strong>myFunction(xml):</strong> Parses the XML response and dynamically generates a table to
+                    display CD
+                    information.</li>
+            </ul>
+            </p>
+            <p>
+                The calls are asynchronous, ensuring that other parts of the page can continue to function while waiting
+                for the
+                data. This enhances the overall user experience by providing real-time updates.
+            </p>
 
 
 
-  <!-- BOOTSTRAP JS BUNDLE -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-    crossorigin="anonymous"></script>
+
+
+            <h2>REST API</h2>
+            <p>
+                In my exploration of REST APIs, I've chosen the OpenWeatherMap API for consideration in my web
+                application development. Here's a brief report on its key aspects:
+            </p>
+            <p>
+                <strong>Type of Response File:</strong> The API returns data in JSON format, making it easy to handle
+                and integrate into web applications.
+            </p>
+            <p>
+                <strong>Key Requirements:</strong> Accessing the API requires an API key, ensuring secure and controlled
+                usage. We can obtain a key by registering on the OpenWeatherMap website.
+            </p>
+            <p>
+                <strong>Usage Fees:</strong> OpenWeatherMap offers free and paid plans. While the free plan is suitable
+                for basic usage, companies with higher demands may opt for paid plans, which are charged based on usage
+                and features.
+            </p>
+            <p>
+                <strong>Documentation:</strong> Developers can find comprehensive documentation
+                [<a href="https://openweathermap.org/api" target="_blank">here</a>](https://openweathermap.org/api). The
+                documentation includes detailed information on API endpoints, request/response formats, and usage
+                guidelines.
+            </p>
+
+
+
+
+            <h2>Extra Credit - API Example</h2>
+            <p>
+                As part of the extra credit, I've implemented a practical example using the OpenWeatherMap API. This
+                example demonstrates how to retrieve current weather information for a specific city.<strong> Right click on
+                this page</strong>, you could see 'Object' element in "Console" tab where weather information is successfully
+                returned from the OpenWeatherMap API for the city of San Francisco.<br>
+                Below is a sample where I extract and display temperature and weather descriptions on a web page.<a
+                    href="hw8_WeatherApp.html">API Example</a>
+            </p>
+            <!-- Example code using JavaScript and AJAX to fetch weather data -->
+            <script>
+                function getWeather() {
+                    const apiKey = '1c06a75b99cca82244734e13efc739f5';   //my API key
+                    const city = 'San Francisco';
+
+                    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+
+                    // AJAX call to fetch weather data
+                    const xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {
+                            const response = JSON.parse(xhr.responseText);
+
+                            console.log(response);
+                        }
+                    };
+                    xhr.open('GET', apiUrl, true);
+                    xhr.send();
+                }
+
+                // Call the function to fetch weather data
+                getWeather();
+            </script>
+
+
+        </div>
+
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- BOOTSTRAP JS BUNDLE -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
